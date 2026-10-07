@@ -26,7 +26,7 @@ commands.seasonality.phase.mid_winter=Mediados de Invierno
 commands.seasonality.phase.late_winter=Finales de Invierno
 
 # Comandos
-commands.seasonality.usage=Uso: /seasonality <getseason|setseason> [subfase]
+commands.seasonality.usage=/seasonality <getseason|setseason> [subfase]
 commands.seasonality.getseason=Estación actual: %s. Tiempo hasta la próxima fase: %s días, %s horas
 commands.seasonality.setseason.success=Estación cambiada correctamente a %s
 commands.seasonality.setseason.fail=Sub-fase desconocida: %s

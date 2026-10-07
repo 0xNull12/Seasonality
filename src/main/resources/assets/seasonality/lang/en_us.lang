@@ -27,7 +27,7 @@ commands.seasonality.phase.mid_winter=Mid Winter
 commands.seasonality.phase.late_winter=Late Winter
 
 # Commands
-commands.seasonality.usage=Usage: /seasonality <getseason|setseason> [subphase]
+commands.seasonality.usage=/seasonality <getseason|setseason> [subphase]
 commands.seasonality.getseason=Current season: %s. Time until next phase: %s days, %s hours
 commands.seasonality.setseason.success=Season successfully set to %s
 commands.seasonality.setseason.fail=Unknown sub-phase: %s. Use tab completion for valid options
