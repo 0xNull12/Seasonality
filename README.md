@@ -14,4 +14,4 @@ The core game logic has been fully replicated and works flawlessly (except for s
 
 **Regarding compatibility with other mods**: There isn’t any yet, since this is a complete rewrite from scratch, but it will be available soon
 
-> I’ll upload the source code when it’s "minimally finished" For now, the source code contains 4,367 lines of code written from April through June and from early September through today (Oct. 1, 2026)
+> the source code contains 4,932 lines of code written from April through June and from early September through today (7/10/26)
