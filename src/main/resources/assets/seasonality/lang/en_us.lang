@@ -1,0 +1,41 @@
+# Creative Tab
+itemGroup.tabSeasonality=Seasonality
+
+# Blocks
+tile.greenhouse_glass.name=Greenhouse Glass
+tile.season_sensor_spring.name=Season Sensor (Spring)
+tile.season_sensor_summer.name=Season Sensor (Summer)
+tile.season_sensor_autumn.name=Season Sensor (Autumn)
+tile.season_sensor_winter.name=Season Sensor (Winter)
+
+# Items
+item.season_clock.name=Temporal Chronometer
+item.seasonality_icon.name=Seasonality Icon
+
+# Sub-Phases (Seasonal Cycle Stages)
+commands.seasonality.phase.early_spring=Early Spring
+commands.seasonality.phase.mid_spring=Mid Spring
+commands.seasonality.phase.late_spring=Late Spring
+commands.seasonality.phase.early_summer=Early Summer
+commands.seasonality.phase.mid_summer=Mid Summer
+commands.seasonality.phase.late_summer=Late Summer
+commands.seasonality.phase.early_autumn=Early Autumn
+commands.seasonality.phase.mid_autumn=Mid Autumn
+commands.seasonality.phase.late_autumn=Late Autumn
+commands.seasonality.phase.early_winter=Early Winter
+commands.seasonality.phase.mid_winter=Mid Winter
+commands.seasonality.phase.late_winter=Late Winter
+
+# Commands
+commands.seasonality.usage=Usage: /seasonality <getseason|setseason> [subphase]
+commands.seasonality.getseason=Current season: %s. Time until next phase: %s days, %s hours
+commands.seasonality.setseason.success=Season successfully set to %s
+commands.seasonality.setseason.fail=Unknown sub-phase: %s. Use tab completion for valid options
+
+# Crop Fertility Tooltips
+tooltip.seasonality.fertile_season=Fertile in:
+tooltip.seasonality.season.spring=§2Spring
+tooltip.seasonality.season.summer=§eSummer
+tooltip.seasonality.season.autumn=§6Autumn
+tooltip.seasonality.season.winter=§bWinter
+tooltip.seasonality.season.all=§dAll Seasons

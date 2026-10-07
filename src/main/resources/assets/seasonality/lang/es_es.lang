@@ -1,0 +1,40 @@
+itemGroup.tabSeasonality=Seasonality
+
+# Bloques
+tile.greenhouse_glass.name=Cristal de Invernadero
+tile.season_sensor_spring.name=Sensor de Estación (Primavera)
+tile.season_sensor_summer.name=Sensor de Estación (Verano)
+tile.season_sensor_autumn.name=Sensor de Estación (Otoño)
+tile.season_sensor_winter.name=Sensor de Estación (Invierno)
+
+# Items
+item.season_clock.name=Cronómetro Temporal
+item.seasonality_icon.name=Icono de Seasonality
+
+# Sub-Fases
+commands.seasonality.phase.early_spring=Principios de Primavera
+commands.seasonality.phase.mid_spring=Mediados de Primavera
+commands.seasonality.phase.late_spring=Finales de Primavera
+commands.seasonality.phase.early_summer=Principios de Verano
+commands.seasonality.phase.mid_summer=Mediados de Verano
+commands.seasonality.phase.late_summer=Finales de Verano
+commands.seasonality.phase.early_autumn=Principios de Otoño
+commands.seasonality.phase.mid_autumn=Mediados de Otoño
+commands.seasonality.phase.late_autumn=Finales de Otoño
+commands.seasonality.phase.early_winter=Principios de Invierno
+commands.seasonality.phase.mid_winter=Mediados de Invierno
+commands.seasonality.phase.late_winter=Finales de Invierno
+
+# Comandos
+commands.seasonality.usage=Uso: /seasonality <getseason|setseason> [subfase]
+commands.seasonality.getseason=Estación actual: %s. Tiempo hasta la próxima fase: %s días, %s horas
+commands.seasonality.setseason.success=Estación cambiada correctamente a %s
+commands.seasonality.setseason.fail=Sub-fase desconocida: %s
+
+# Tooltips de Fertilidad de Cultivos
+tooltip.seasonality.fertile_season=Fértil en:
+tooltip.seasonality.season.spring=§2Primavera
+tooltip.seasonality.season.summer=§eVerano
+tooltip.seasonality.season.autumn=§6Otoño
+tooltip.seasonality.season.winter=§bInvierno
+tooltip.seasonality.season.all=§dTodas las Estaciones

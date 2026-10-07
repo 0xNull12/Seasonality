@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GSG",
+    "SGS",
+    "GSG"
+  ],
+  "key": {
+    "G": { "item": "minecraft:glass" },
+    "S": { "item": "minecraft:sand" }
+  },
+  "result": {
+    "item": "seasonality:greenhouse_glass",
+    "count": 4
+  }
+}

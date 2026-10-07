@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "normal": { "model": "seasonality:greenhouse_glass" }
+  }
+}

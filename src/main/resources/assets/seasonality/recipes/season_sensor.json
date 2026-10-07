@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "SQS",
+    "PPP"
+  ],
+  "key": {
+    "W": { "type": "forge:ore_dict", "ore": "plankWood" },
+    "S": { "type": "forge:ore_dict", "ore": "slimeball" },
+    "Q": { "item": "minecraft:quartz" },
+    "P": { "type": "forge:ore_dict", "ore": "stone" }
+  },
+  "result": {
+    "item": "seasonality:season_sensor_spring",
+    "count": 1
+  }
+}

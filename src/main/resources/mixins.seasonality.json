@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "com.oxnull.seasonality.mixin",
+  "refmap": "mixins.seasonality.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "minVersion": "0.8",
+  "mixins": [
+    "common.CommonWorldClimateMixin"
+  ],
+  "client": [
+    "client.EntityRendererClimateMixin",
+    "client.ClientWorldLuminanceMixin"
+  ],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

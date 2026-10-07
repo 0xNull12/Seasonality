@@ -1,0 +1,364 @@
+{
+  "textures": [
+    {
+      "name": "greenhouse_glass",
+      "type": "block",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/blocks/greenhouse_glass.png"
+    },
+    {
+      "name": "season_sensor_side",
+      "type": "block",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/blocks/season_sensor_side.png"
+    },
+    {
+      "name": "season_sensor_spring_top",
+      "type": "block",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/blocks/season_sensor_spring_top.png"
+    },
+    {
+      "name": "season_sensor_summer_top",
+      "type": "block",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/blocks/season_sensor_summer_top.png"
+    },
+    {
+      "name": "season_sensor_autumn_top",
+      "type": "block",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/blocks/season_sensor_autumn_top.png"
+    },
+    {
+      "name": "season_sensor_winter_top",
+      "type": "block",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/blocks/season_sensor_winter_top.png"
+    },
+    {
+      "name": "logo",
+      "type": "gui",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/gui/logo.png"
+    },
+    {
+      "name": "ss_icon",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/ss_icon.png"
+    },
+    {
+      "name": "season_clock_00",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_00.png"
+    },
+    {
+      "name": "season_clock_01",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_01.png"
+    },
+    {
+      "name": "season_clock_02",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_02.png"
+    },
+    {
+      "name": "season_clock_03",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_03.png"
+    },
+    {
+      "name": "season_clock_04",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_04.png"
+    },
+    {
+      "name": "season_clock_05",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_05.png"
+    },
+    {
+      "name": "season_clock_06",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_06.png"
+    },
+    {
+      "name": "season_clock_07",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_07.png"
+    },
+    {
+      "name": "season_clock_08",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_08.png"
+    },
+    {
+      "name": "season_clock_09",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_09.png"
+    },
+    {
+      "name": "season_clock_10",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_10.png"
+    },
+    {
+      "name": "season_clock_11",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_11.png"
+    },
+    {
+      "name": "season_clock_12",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_12.png"
+    },
+    {
+      "name": "season_clock_13",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_13.png"
+    },
+    {
+      "name": "season_clock_14",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_14.png"
+    },
+    {
+      "name": "season_clock_15",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_15.png"
+    },
+    {
+      "name": "season_clock_16",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_16.png"
+    },
+    {
+      "name": "season_clock_17",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_17.png"
+    },
+    {
+      "name": "season_clock_18",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_18.png"
+    },
+    {
+      "name": "season_clock_19",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_19.png"
+    },
+    {
+      "name": "season_clock_20",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_20.png"
+    },
+    {
+      "name": "season_clock_21",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_21.png"
+    },
+    {
+      "name": "season_clock_22",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_22.png"
+    },
+    {
+      "name": "season_clock_23",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_23.png"
+    },
+    {
+      "name": "season_clock_24",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_24.png"
+    },
+    {
+      "name": "season_clock_25",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_25.png"
+    },
+    {
+      "name": "season_clock_26",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_26.png"
+    },
+    {
+      "name": "season_clock_27",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_27.png"
+    },
+    {
+      "name": "season_clock_28",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_28.png"
+    },
+    {
+      "name": "season_clock_29",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_29.png"
+    },
+    {
+      "name": "season_clock_30",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_30.png"
+    },
+    {
+      "name": "season_clock_31",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_31.png"
+    },
+    {
+      "name": "season_clock_32",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_32.png"
+    },
+    {
+      "name": "season_clock_33",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_33.png"
+    },
+    {
+      "name": "season_clock_34",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_34.png"
+    },
+    {
+      "name": "season_clock_35",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_35.png"
+    },
+    {
+      "name": "season_clock_36",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_36.png"
+    },
+    {
+      "name": "season_clock_37",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_37.png"
+    },
+    {
+      "name": "season_clock_38",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_38.png"
+    },
+    {
+      "name": "season_clock_39",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_39.png"
+    },
+    {
+      "name": "season_clock_40",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_40.png"
+    },
+    {
+      "name": "season_clock_41",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_41.png"
+    },
+    {
+      "name": "season_clock_42",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_42.png"
+    },
+    {
+      "name": "season_clock_43",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_43.png"
+    },
+    {
+      "name": "season_clock_44",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_44.png"
+    },
+    {
+      "name": "season_clock_45",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_45.png"
+    },
+    {
+      "name": "season_clock_46",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_46.png"
+    },
+    {
+      "name": "season_clock_47",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_47.png"
+    },
+    {
+      "name": "season_clock_48",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_48.png"
+    },
+    {
+      "name": "season_clock_49",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_49.png"
+    },
+    {
+      "name": "season_clock_50",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_50.png"
+    },
+    {
+      "name": "season_clock_51",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_51.png"
+    },
+    {
+      "name": "season_clock_52",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_52.png"
+    },
+    {
+      "name": "season_clock_53",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_53.png"
+    },
+    {
+      "name": "season_clock_54",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_54.png"
+    },
+    {
+      "name": "season_clock_55",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_55.png"
+    },
+    {
+      "name": "season_clock_56",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_56.png"
+    },
+    {
+      "name": "season_clock_57",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_57.png"
+    },
+    {
+      "name": "season_clock_58",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_58.png"
+    },
+    {
+      "name": "season_clock_59",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_59.png"
+    },
+    {
+      "name": "season_clock_60",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_60.png"
+    },
+    {
+      "name": "season_clock_61",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_61.png"
+    },
+    {
+      "name": "season_clock_62",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_62.png"
+    },
+    {
+      "name": "season_clock_63",
+      "type": "item",
+      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/season_clock_63.png"
+    }
+  ]
+}
