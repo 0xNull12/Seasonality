@@ -30,6 +30,7 @@ import com.google.gson.*;
 import com.oxnull.seasonality.core.Seasonality;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.SimpleReloadableResourceManager;
+import net.minecraft.client.resources.IResourcePack;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -39,6 +40,8 @@ import java.io.*;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.HashSet;
+import java.util.List;
+import java.lang.reflect.Field;
 import java.util.Set;
 
 /**
@@ -48,6 +51,7 @@ import java.util.Set;
 public class RuntimeAssets {
 
     private static final String ASSETS_DIR = "config/seasonality/assets/";
+    private static GeneratedResourcePack runtimePack;
 
     // Load assets.json from the JAR
     private static JsonObject loadAssetsJson() throws IOException {
@@ -209,9 +213,34 @@ public class RuntimeAssets {
 
     // Inject the generated resource pack into Minecraft
     public static void registerGeneratedResourcePack() {
-        File resourceBase = new File(ASSETS_DIR);
-        SimpleReloadableResourceManager resourceManager = (SimpleReloadableResourceManager) Minecraft.getMinecraft().getResourceManager();
-        resourceManager.reloadResourcePack(new GeneratedResourcePack(resourceBase));
-        Seasonality.LOGGER.info("Injected runtime resource pack from {}", resourceBase.getAbsolutePath());
+        if (runtimePack == null) {
+            runtimePack = new GeneratedResourcePack(new File(ASSETS_DIR));
+        }
+        Minecraft mc = Minecraft.getMinecraft();
+        addToDefaultResourcePacks(mc, runtimePack);
+        ((SimpleReloadableResourceManager) mc.getResourceManager()).reloadResourcePack(runtimePack);
+        Seasonality.LOGGER.info("Injected runtime resource pack from {}", new File(ASSETS_DIR).getAbsolutePath());
+    }
+
+    @SuppressWarnings("unchecked")
+    private static void addToDefaultResourcePacks(Minecraft mc, IResourcePack pack) {
+        for (Field field : Minecraft.class.getDeclaredFields()) {
+            if (!List.class.isAssignableFrom(field.getType())) continue;
+            field.setAccessible(true);
+            try {
+                Object value = field.get(mc);
+                if (value instanceof List) {
+                    List<?> list = (List<?>) value;
+                    if (!list.isEmpty() && list.get(0) instanceof IResourcePack) {
+                        if (!list.contains(pack)) {
+                            ((List<IResourcePack>) list).add(pack);
+                        }
+                        return;
+                    }
+                }
+            } catch (IllegalAccessException ignored) {
+            }
+        }
+        Seasonality.LOGGER.warn("Could not locate defaultResourcePacks");
     }
 }

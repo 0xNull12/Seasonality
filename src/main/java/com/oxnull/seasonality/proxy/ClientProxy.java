@@ -17,7 +17,6 @@
 package com.oxnull.seasonality.proxy;
 
 import com.google.common.base.Preconditions;
-import com.oxnull.seasonality.assets.RuntimeAssets;
 import com.oxnull.seasonality.api.ISeasonalityBlock;
 import com.oxnull.seasonality.core.Seasonality;
 import com.oxnull.seasonality.util.inventory.SeasonalityCreativeTab;
@@ -83,9 +82,5 @@ public class ClientProxy extends CommonProxy {
                 Seasonality.LOGGER.warn("Attempted to register model for an unregistered item: {}", item.getClass().getName());
             }
         }
-
-        // Check and download the textures
-        RuntimeAssets.checkAssets();
-        RuntimeAssets.registerGeneratedResourcePack();
     }
 }

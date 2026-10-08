@@ -16,6 +16,7 @@
  */
 package com.oxnull.seasonality.core;
 
+import com.oxnull.seasonality.assets.RuntimeAssets;
 import com.oxnull.seasonality.command.SeasonalityCommand;
 import com.oxnull.seasonality.init.ConfigLoader;
 import com.oxnull.seasonality.init.BlockRegistry;
@@ -78,6 +79,10 @@ public class Seasonality {
         proxy.registerEventListeners();
         LOGGER.info("Seasonality loaded enjoy the weather changes! Does anyone actually read the game log?");
         ConfigLoader.init(configDirectory);
+
+        // Check and download the textures
+        RuntimeAssets.checkAssets();
+        RuntimeAssets.registerGeneratedResourcePack();
     }
 
     @Mod.EventHandler
