@@ -3,8 +3,8 @@
 - Migrar a [**CleanroomModTemplate**](https://github.com/CleanroomMC/CleanroomModTemplate/tree/mixin)
 - Corrigir el bug que el cristal de invernadero no detiene el frio y impide que el cultivo crezca
 - Corrigir la recalculacion de la nieve
-- Hacer "retrocompatible" con mods que tiene compatibilidad con Serene Seasons
-- Crear el logo
+- Hacer "retrocompatible" con mods que tiene compatibilidad con Serene Seasons (*Terminado a medias 11/10/26*)
+- Crear el logo (Gemini, no soy artista)
 - Parchear CRopGrowInterceptor para que detecte los bloques de alrededor
 
 # Futuras caracteristicas

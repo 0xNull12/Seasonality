@@ -9,7 +9,7 @@ tile.season_sensor_autumn.name=Season Sensor (Autumn)
 tile.season_sensor_winter.name=Season Sensor (Winter)
 
 # Items
-item.season_clock.name=Temporal Chronometer
+item.season_clock.name=Seasonal Clock
 item.seasonality_icon.name=Seasonality Icon
 
 # Sub-Phases (Seasonal Cycle Stages)

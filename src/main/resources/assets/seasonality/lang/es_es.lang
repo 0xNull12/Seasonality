@@ -8,7 +8,7 @@ tile.season_sensor_autumn.name=Sensor de Estación (Otoño)
 tile.season_sensor_winter.name=Sensor de Estación (Invierno)
 
 # Items
-item.season_clock.name=Cronómetro Temporal
+item.season_clock.name=Reloj estacional
 item.seasonality_icon.name=Icono de Seasonality
 
 # Sub-Fases
