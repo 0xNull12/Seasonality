@@ -271,17 +271,15 @@ public class SeasonalityCompatAdapter {
             (net.minecraft.world.biome.Biome) biome,
             (net.minecraft.util.math.BlockPos) pos
         );
-        // TODO: Eliminar
         com.oxnull.seasonality.core.Seasonality.LOGGER.info(
-            "[compat] getFloatTemperature(World) -> {}", temp);
+            "[Seasonailty-compat] getFloatTemperature(World) -> {}", temp);
         return temp;
     }
 
     public static float getFloatTemperatureFromSubSeason(Object subSeason, Object biome, Object pos) {
         String subSeasonName = ((Enum<?>) subSeason).name();
-        // TODO: Eliminar
         com.oxnull.seasonality.core.Seasonality.LOGGER.info(
-            "[compat] getFloatTemperature(SubSeason={}) ", subSeasonName);
+            "[Seasonailty-compat] getFloatTemperature(SubSeason={}) ", subSeasonName);
         try {
             com.oxnull.seasonality.api.season.AnnualSeason.SubPhase phase =
                 com.oxnull.seasonality.api.season.AnnualSeason.SubPhase.valueOf(subSeasonName);

@@ -62,14 +62,13 @@ public class SeasonalityClassTransformer implements IClassTransformer {
 
     @Override
     public byte[] transform(String name, String transformedName, byte[] basicClass) {
-        // TODO: Eliminar messajes
         if (transformedName.startsWith("sereneseasons.")) {
-            System.out.println("[SEASONALITY-compat] Transformer sees: " + transformedName +
+            System.out.println("[Seasonailty-compat] Transformer sees: " + transformedName +
                              " (already loaded: " + (basicClass != null) + ")");
         }
         if (basicClass != null) return basicClass;
         if (COMPAT_CLASSES.contains(transformedName)) {
-            System.out.println("[SEASONALITY-compat] Generating: " + transformedName);
+            System.out.println("[Seasonality-compat] Generating: " + transformedName);
             return generateCompatClass(transformedName);
         }
         return basicClass;
