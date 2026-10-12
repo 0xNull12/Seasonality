@@ -52,6 +52,10 @@ public class AgriculturalConfig {
         @Config.Comment("Maximum height greenhouse glass can be above a crop for it to be fertile out of season")
         @Config.RangeInt(min = 1, max = 64)
         public int greenhouseGlassMaxHeight = 7;
+
+        @Config.Comment("Horizontal radius to search for the GreenHouse Glass around a crop. 0 = only wants one block up")
+        @Config.RangeInt(min = 0, max = 4)
+        public int greenhouseGlassRadius = 2;
     }
 
     // TODO: Extender esta lista a más mods - Expand this list to include more mods

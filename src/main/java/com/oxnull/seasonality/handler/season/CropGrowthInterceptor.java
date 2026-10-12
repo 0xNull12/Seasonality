@@ -23,6 +23,7 @@ import com.oxnull.seasonality.init.CropFertilityCache;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockGrass;
 import net.minecraft.block.BlockReed;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -50,7 +51,6 @@ public class CropGrowthInterceptor {
     @SubscribeEvent
     public void onCropGrowth(BlockEvent.CropGrowEvent.Pre event) {
         Block plant = event.getState().getBlock();
-
         if (AgriculturalConfig.general.seasonalCrops
                 && !CropFertilityCache.isCropFertile(plant.getRegistryName().toString(), event.getWorld(), event.getPos())
                 && !isUnderGreenhouseGlass(event.getWorld(), event.getPos())) {
@@ -82,13 +82,32 @@ public class CropGrowthInterceptor {
 
     private boolean isUnderGreenhouseGlass(World world, BlockPos cropPos) {
         int maxHeight = AgriculturalConfig.general.greenhouseGlassMaxHeight;
-        int maxY = cropPos.getY() + maxHeight;
-        BlockPos.MutableBlockPos mutablePos = new BlockPos.MutableBlockPos(cropPos);
+        int radius = AgriculturalConfig.general.greenhouseGlassRadius;
+        if(!hasRootGlass(world, cropPos, maxHeight)) return false;
+        return hasWallGlass(world, cropPos, -1, 0, maxHeight, radius)
+            && hasWallGlass(world, cropPos, 1, 0, maxHeight, radius)
+            && hasWallGlass(world, cropPos, 0, 1, maxHeight, radius)
+            && hasWallGlass(world, cropPos, 0, -1, maxHeight, radius);
+    }
 
-        for (int y = cropPos.getY() + 1; y <= maxY; y++) {
-            mutablePos.setY(y);
-            if (isGreenhouseGlass(world.getBlockState(mutablePos).getBlock())) {
-                return true;
+    private boolean hasRootGlass(World world, BlockPos cropPos, int maxHeight) {
+        for(int y = cropPos.getY() + 1; y <= Math.min(cropPos.getY() + 32, 255); y++) {
+            BlockPos p = new BlockPos(cropPos.getX(), y, cropPos.getZ());
+            IBlockState s = world.getBlockState(p);
+            if(s.getBlock().isAir(s, world, p)) continue;
+            return isGreenhouseGlass(s.getBlock());
+        }
+        return false;
+    }
+
+    private boolean hasWallGlass(World world, BlockPos cropPos, int dx, int dz, int maxHeight, int radius) {
+        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
+        for(int d = 1; d <= radius; d++) {
+            int x = cropPos.getX() + dx * d;
+            int z = cropPos.getZ() + dz * d;
+            for(int y = cropPos.getY(); y <= cropPos.getY() + 16; y++) {
+                pos.setPos(x, y, z);
+                if(isGreenhouseGlass(world.getBlockState(pos).getBlock())) return true;
             }
         }
         return false;

@@ -77,7 +77,7 @@ public class Seasonality {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         proxy.registerEventListeners();
-        LOGGER.info("Seasonality loaded enjoy the weather changes! Does anyone actually read the game log?");
+        LOGGER.info("Seasonality loaded enjoy the seasons of the year! Does anyone actually read the game log?");
         ConfigLoader.init(configDirectory);
 
         // Check and download the textures
