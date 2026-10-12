@@ -8,6 +8,7 @@ The logic of Serene Seasons has been fully replicated and works flawlessly (exce
 ## Features
 * **Snow Recalculation:** Calculates seasonal effects, such as winter leaving snow behind when the chunk loads in the middle of summer similar to Serene Tweaks
 * **Dynamic planetary rotation:** Subtle (almost imperceptible) variations in the length of the day-night cycle depending on the current season, simulating Earth’s orbital tilt (though I’m no scientist I just Googled it)
+* **Includes Serene Seasons blocks**: Although rewritten, they are included and are almost fully functional, though they have some bugs that will be fixed in future updates
 
 **About the license**: This mod specifically the final `.jar` file and the source code does not distribute any texture files or code from Serene Seasons, as it’s up to the user to download the textures to their computer from the original repository and decide whether to play without textures or with the Serene Seasons textures while using some of my own (I’m not an artist, just to clarify)
 
