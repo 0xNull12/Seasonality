@@ -39,4 +39,6 @@ public class CommonProxy {
     }
 
     public void registerPostEventListeners() {}
+
+    public void registerRuntimeAssets() {}
 }

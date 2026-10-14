@@ -72,6 +72,7 @@ public class Seasonality {
         EventBusRegistrar.registerPreInitHandlers();
 
         proxy.registerRenderers();
+        proxy.registerRuntimeAssets();
     }
 
     @Mod.EventHandler
@@ -79,10 +80,6 @@ public class Seasonality {
         proxy.registerEventListeners();
         LOGGER.info("Seasonality loaded enjoy the seasons of the year! Does anyone actually read the game log?");
         ConfigLoader.init(configDirectory);
-
-        // Check and download the textures
-        RuntimeAssets.checkAssets();
-        RuntimeAssets.registerGeneratedResourcePack();
     }
 
     @Mod.EventHandler

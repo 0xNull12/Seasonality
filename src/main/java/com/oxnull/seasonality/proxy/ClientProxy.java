@@ -18,6 +18,7 @@ package com.oxnull.seasonality.proxy;
 
 import com.google.common.base.Preconditions;
 import com.oxnull.seasonality.api.ISeasonalityBlock;
+import com.oxnull.seasonality.assets.RuntimeAssets;
 import com.oxnull.seasonality.core.Seasonality;
 import com.oxnull.seasonality.util.inventory.SeasonalityCreativeTab;
 import net.minecraft.block.Block;
@@ -82,5 +83,10 @@ public class ClientProxy extends CommonProxy {
                 Seasonality.LOGGER.warn("Attempted to register model for an unregistered item: {}", item.getClass().getName());
             }
         }
+    }
+
+    @Override
+    public void registerRuntimeAssets() {
+        RuntimeAssets.registerGeneratedResourcePack();
     }
 }
