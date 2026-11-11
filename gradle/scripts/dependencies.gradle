@@ -7,7 +7,7 @@ repositories {
         forRepository {
             maven {
                 name 'CleanroomMC CurseMaven'
-                url 'https://curse.cleanroommc.com'
+                url 'https://www.cursemaven.com/'
             }
         }
         filter {

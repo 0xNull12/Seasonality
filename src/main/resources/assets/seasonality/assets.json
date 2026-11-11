@@ -31,11 +31,6 @@
       "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/blocks/season_sensor_winter_top.png"
     },
     {
-      "name": "logo",
-      "type": "gui",
-      "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/gui/logo.png"
-    },
-    {
       "name": "ss_icon",
       "type": "item",
       "url": "https://raw.githubusercontent.com/Glitchfiend/SereneSeasons/master/src/main/resources/assets/sereneseasons/textures/items/ss_icon.png"

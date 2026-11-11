@@ -213,34 +213,14 @@ public class RuntimeAssets {
 
     // Inject the generated resource pack into Minecraft
     public static void registerGeneratedResourcePack() {
-        if (runtimePack == null) {
+        if(runtimePack == null) {
             runtimePack = new GeneratedResourcePack(new File(ASSETS_DIR));
         }
         Minecraft mc = Minecraft.getMinecraft();
-        addToDefaultResourcePacks(mc, runtimePack);
+        if(!mc.defaultResourcePacks.contains(runtimePack)) {
+            mc.defaultResourcePacks.add(runtimePack);
+        }
         ((SimpleReloadableResourceManager) mc.getResourceManager()).reloadResourcePack(runtimePack);
         Seasonality.LOGGER.info("Injected runtime resource pack from {}", new File(ASSETS_DIR).getAbsolutePath());
-    }
-
-    @SuppressWarnings("unchecked")
-    private static void addToDefaultResourcePacks(Minecraft mc, IResourcePack pack) {
-        for (Field field : Minecraft.class.getDeclaredFields()) {
-            if (!List.class.isAssignableFrom(field.getType())) continue;
-            field.setAccessible(true);
-            try {
-                Object value = field.get(mc);
-                if (value instanceof List) {
-                    List<?> list = (List<?>) value;
-                    if (!list.isEmpty() && list.get(0) instanceof IResourcePack) {
-                        if (!list.contains(pack)) {
-                            ((List<IResourcePack>) list).add(pack);
-                        }
-                        return;
-                    }
-                }
-            } catch (IllegalAccessException ignored) {
-            }
-        }
-        Seasonality.LOGGER.warn("Could not locate defaultResourcePacks");
     }
 }

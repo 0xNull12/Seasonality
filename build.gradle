@@ -1,4 +1,8 @@
+/**
+ * It is advised that you do not edit anything in the build.gradle; unless you are sure of what you are doing
+ */
 import com.gtnewhorizons.retrofuturagradle.mcp.InjectTagsTask
+import net.darkhax.curseforgegradle.TaskPublishCurseForge
 import org.jetbrains.changelog.Changelog
 import org.jetbrains.gradle.ext.Gradle
 
@@ -8,12 +12,15 @@ plugins {
     id 'maven-publish'
     id 'org.jetbrains.gradle.plugin.idea-ext' version '1.4.1'
     id 'com.gtnewhorizons.retrofuturagradle' version '2.0.3'
+    id 'net.darkhax.curseforgegradle' version '1.+' apply false
+    id 'com.modrinth.minotaur' version '2.+' apply false
     id 'org.jetbrains.changelog' version '2.5.0'
     id 'com.gradleup.shadow' version '9.6.+'
 }
 
 apply from: 'gradle/scripts/helpers.gradle'
 
+// Early Assertions
 assertProperty 'mod_version'
 assertProperty 'root_package'
 assertProperty 'mod_id'
@@ -51,7 +58,7 @@ tasks.decompressDecompiledSources.enabled !propertyBool('change_minecraft_source
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(propertyBool('use_modern_java_syntax') ? 16 : 8))
-        vendor.set(JvmVendorSpec.AZUL)
+        // Azul covers the most platforms for Java 8 toolchains, crucially including MacOS arm64
     }
     if (propertyBool('generate_sources_jar')) {
         withSourcesJar()
@@ -71,8 +78,10 @@ minecraft {
 
     username.set(propertyString('minecraft_username'))
     
+    // Add any additional tweaker classes here
     extraTweakClasses.addAll(propertyStringList('extra_tweak_classes'))
 
+    // Add various JVM arguments here for runtime
     def args = ['-ea:' + group]
     if (propertyBool('use_mixins')) {
         args << '-Dmixin.hotSwap=true'
@@ -101,38 +110,30 @@ repositories {
         name 'CleanroomMC Maven'
         url 'https://maven.cleanroommc.com'
     }
-    maven {
-        name 'CurseMaven'
-        url 'https://cursemaven.com'
-    }
 }
 
-// Dependencias
 dependencies {
     if (propertyBool('use_modern_java_syntax')) {
         annotationProcessor 'com.github.bsideup.jabel:jabel-javac-plugin:1.0.0'
+        // Workaround for https://github.com/bsideup/jabel/issues/174
         annotationProcessor 'net.java.dev.jna:jna-platform:5.13.0'
         compileOnly ('com.github.bsideup.jabel:jabel-javac-plugin:1.0.0') {
             transitive = false
         }
+        // Allow jdk.unsupported classes like sun.misc.Unsafe, workaround for JDK-8206937 and fixes crashes in tests
         patchedMinecraft 'me.eigenraven.java8unsupported:java-8-unsupported-shim:1.0.0'
+        // Include for tests
         testAnnotationProcessor 'com.github.bsideup.jabel:jabel-javac-plugin:1.0.0'
         testCompileOnly('com.github.bsideup.jabel:jabel-javac-plugin:1.0.0') {
-            transitive = false
+            transitive = false // We only care about the 1 annotation class
         }
     }
-    
-    // JetBrains Annotations
     if (propertyBool('use_jetbrains_annotations')) {
         compileOnly 'org.jetbrains:annotations:26.1.0'
     }
-    
-    // AssetMover
     if (propertyBool('use_asset_mover')) {
         implementation "com.cleanroommc:assetmover:${propertyString('asset_mover_version')}"
     }
-    
-    // MixinBooter
     if (propertyBool('use_mixins')) {
         String mixin = modUtils.enableMixins("zone.rong:mixinbooter:${propertyString('mixin_booter_version')}", propertyString('mixin_refmap'))
         implementation (mixin) {
@@ -140,8 +141,6 @@ dependencies {
         }
         annotationProcessor mixin
     }
-    
-    // JUnit Testing
     if (propertyBool('enable_junit_testing')) {
         testImplementation 'org.junit.jupiter:junit-jupiter:5.7.1'
         testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
@@ -150,6 +149,7 @@ dependencies {
 
 apply from: 'gradle/scripts/dependencies.gradle'
 
+// Adds Access Transformer files to tasks
 if (propertyBool('use_access_transformer')) {
     def atFiles = propertyStringList('access_transformer_locations').collect { location ->
         def fileLocation = file("src/main/resources/${location}")
@@ -159,12 +159,14 @@ if (propertyBool('use_access_transformer')) {
         return fileLocation
     }
 
+    // Apply ATs to both Minecraft and Forge sources/runtime patched jar
     tasks.named('applyJST').configure {
         accessTransformerFiles.from(atFiles)
     }
 }
 
 processResources {
+
     inputs.property 'mod_id', propertyString('mod_id')
     inputs.property 'mod_name', propertyString('mod_name')
     inputs.property 'mod_version', propertyString('mod_version')
@@ -200,12 +202,12 @@ processResources {
     if (propertyBool('use_access_transformer')) {
         rename '(.+_at.cfg)', 'META-INF/$1'
     }
+
 }
 
 jar {
     manifest {
         def attribute_map = [:]
-        
         if (propertyBool('is_coremod')) {
             attribute_map['FMLCorePlugin'] = propertyString('coremod_plugin_class_name')
             if (propertyBool('coremod_includes_mod')) {
@@ -216,28 +218,21 @@ jar {
                 }
             }
         }
-        
         if (propertyBool('use_access_transformer')) {
             attribute_map['FMLAT'] = propertyString('access_transformer_locations')
         }
-        
-        // Mixin Configs
         def mixinConfigs = propertyStringList('mixin_configs')
         if (!mixinConfigs.isEmpty()) {
             attribute_map['MixinConfigs'] = mixinConfigs.join(',')
         }
-        
-        // Mixin Connector
         def mixinConnectorClass = propertyString('mixin_connector_class')
         if (!mixinConnectorClass.isEmpty()) {
             attribute_map['MixinConnector'] = mixinConnectorClass
         }
-        
         attributes(attribute_map)
     }
 }
 
-// IntelliJ IDEA Configuration
 idea {
     module {
         inheritOutputDirs = true
@@ -273,7 +268,6 @@ idea {
     }
 }
 
-// Testing Configuration
 compileTestJava {
     sourceCompatibility = targetCompatibility = 8
 }
@@ -290,7 +284,6 @@ test {
     }
 }
 
-// Changelog Parser
 String parserChangelog() {
     if (!file('CHANGELOG.md').exists()) {
         throw new GradleException('publish_with_changelog is true, but CHANGELOG.md does not exist in the workspace!')
@@ -304,7 +297,6 @@ String parserChangelog() {
     return parsedChangelog
 }
 
-// Mixin JSON Generator
 tasks.register('generateMixinJson') {
     group 'cleanroom helpers'
     def missingConfig = propertyStringList('mixin_configs').findAll(config -> !file("src/main/resources/${config}").exists())
@@ -317,22 +309,11 @@ tasks.register('generateMixinJson') {
     doLast {
         for (String mixinConfig : missingConfig) {
             def file = file("src/main/resources/${mixinConfig}")
-            file << """{
-    "package": "${propertyString('mixin_package')}",
-    "required": true,
-    "refmap": "${propertyString('mixin_refmap')}",
-    "target": "@env(DEFAULT)",
-    "minVersion": "0.8.5",
-    "compatibilityLevel": "JAVA_8",
-    "mixins": [],
-    "server": [],
-    "client": []
-}"""
+            file << """{\n\t"package": "",\n\t"required": true,\n\t"refmap": "${propertyString('mixin_refmap')}",\n\t"target": "@env(DEFAULT)",\n\t"minVersion": "0.8.5",\n\t"compatibilityLevel": "JAVA_8",\n\t"mixins": [],\n\t"server": [],\n\t"client": []\n}"""
         }
     }
 }
 
-// Compilation Settings
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
     if (propertyBool('use_modern_java_syntax')) {
@@ -348,7 +329,6 @@ tasks.withType(JavaCompile).configureEach {
     }
 }
 
-// Cleanroom Helpers
 tasks.register('cleanroomAfterSync') {
     group 'cleanroom helpers'
     dependsOn 'injectTags', 'generateMixinJson'
@@ -385,6 +365,15 @@ tasks.register('prioritizeCoremods') {
 idea.project.settings {
     taskTriggers {
         afterSync 'cleanroomAfterSync'
+    }
+}
+
+if (propertyBool('publish_to_curseforge')) {
+    assertProperty 'curseforge_project_id'
+    apply plugin: 'net.darkhax.curseforgegradle'
+    tasks.register('curseforge', TaskPublishCurseForge) {
+        group 'publishing'
+        description "Uploads CurseForge project ${propertyString('curseforge_project_id')}"
     }
 }
 

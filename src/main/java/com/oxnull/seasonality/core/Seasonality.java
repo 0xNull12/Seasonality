@@ -30,6 +30,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.fml.common.event.FMLConstructionEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -62,6 +63,13 @@ public class Seasonality {
     public static File configDirectory;
 
     @Mod.EventHandler
+    public void construct(FMLConstructionEvent event){
+        if (event.getSide().isClient()) {
+            RuntimeAssets.checkAssets();
+        }
+    }
+
+    @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         configDirectory = new File(event.getModConfigurationDirectory(), MOD_ID);
         if (!configDirectory.exists()) configDirectory.mkdirs();
@@ -72,7 +80,9 @@ public class Seasonality {
         EventBusRegistrar.registerPreInitHandlers();
 
         proxy.registerRenderers();
-        proxy.registerRuntimeAssets();
+        if(event.getSide().isClient()) {
+            RuntimeAssets.registerGeneratedResourcePack();
+        }
     }
 
     @Mod.EventHandler
