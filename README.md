@@ -1,21 +1,22 @@
-## TemplateDevEnv
-_For Kotlin see [TemplateDevEnvKt](https://github.com/CleanroomMC/TemplateDevEnvKt)_
+# Seasonality
+**Note: This mod will be updated very slowly**
 
-Template workspace for modding Minecraft 1.12.2. Licensed under MIT, it is made for public use.
+Seasonality implements the four seasons (spring, summer, autumn, and winter). Although it shares a similar concept with Serene Seasons, it has been completely rewritten from scratch under an open-source license to add new features in the future, fix bugs, and keep it up to date
 
-This template runs on **Java 25**, **Gradle 9.7.0** + **[RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) 2.0.3** + **Forge 14.23.5.2847**.
+The logic of Serene Seasons has been fully replicated and works flawlessly (except for a few beta bugs that are currently being fixed and will be resolved)
 
-With **coremod and mixin support** that is easy to configure.
+## Features
+* **Snow Recalculation:** Calculates seasonal effects, such as winter leaving snow behind when the chunk loads in the middle of summer similar to Serene Tweaks
+* **Dynamic planetary rotation:** Subtle (almost imperceptible) variations in the length of the day-night cycle depending on the current season, simulating Earth’s orbital tilt (though I’m no scientist I just Googled it)
+* **Includes Serene Seasons blocks**: Although rewritten, they are included and are almost fully functional, though they have some bugs that will be fixed in future updates
 
-### Instructions:
+**About the license**: This mod specifically the final `.jar` file and the source code does not distribute any texture files or code from Serene Seasons, as it’s up to the user to download the textures to their computer from the original repository and decide whether to play without textures or with the Serene Seasons textures while using some of my own (I’m not an artist, just to clarify)
 
-1. Click `use this template` at the top.
-2. Clone the repository that you have created with this template to your local machine.
-3. Make sure IDEA is using Java 25 for Gradle before you sync the project. Verify this by going to IDEA's `Settings > Build, Execution, Deployment > Build Tools > Gradle > Gradle JVM`.
-4. Open the project folder in IDEA. When prompted, click "Load Gradle Project" as it detects the `build.gradle`, if you weren't prompted, right-click the project's `build.gradle` in IDEA, select `Link Gradle Project`, after completion, hit `Refresh All` in the gradle tab on the right.
-5. Run gradle tasks such as `runClient` and `runServer` in the IDEA gradle tab, or use the auto-imported run configurations like `1. Run Client`.
+**Regarding compatibility with other mods**: There isn’t any yet, since this is a complete rewrite from scratch, but full compatibility will be available soon. It’s currently in a very early stage, but I was able to make it compatible with SimpleDifficulty, I don’t know if it works with other mods, but it probably does
 
-### Notes:
-- Dependencies script in [gradle/scripts/dependencies.gradle](gradle/scripts/dependencies.gradle), explanations are commented in the file.
-- Publishing script in [gradle/scripts/publishing.gradle](gradle/scripts/publishing.gradle).
-- When writing Mixins on IntelliJ, it is advisable to use latest [MinecraftDev Fork for RetroFuturaGradle](https://github.com/eigenraven/MinecraftDev/releases).
+### Want a Feature?
+If you’d like a feature in this mod that Serene Seasons might not have,
+
+please request it on this mod’s GitHub Issue Tracker, and I’ll see if it’s feasible or possible to add it.
+
+> The source code contains 6,307 lines of code (10/11/2026)
