@@ -1,8 +1,8 @@
 <div align=center>
   
-# Migrated to [Codeberg](https://codeberg.org/0xNull12/Seasonality)
-
-It's no longer being developed on GitHub because I prefer Codeberg's environment.
+> **Migrated to [Codeberg](https://codeberg.org/0xNull12/Seasonality)**
+>
+> Development is no longer taking place on GitHub, as I prefer Codeberg's environment; however, I will still review the issues and may review any pull requests submitted to this repository.
 
 </div>
 
