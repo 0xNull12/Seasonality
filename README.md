@@ -1,3 +1,11 @@
+<div align=center>
+  
+# Migrated to [Codeberg](https://codeberg.org/0xNull12/Seasonality)
+
+It's no longer being developed on GitHub because I prefer Codeberg's environment.
+
+</div>
+
 # Seasonality
 **Note: This mod will be updated very slowly**
 
